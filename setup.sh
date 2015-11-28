@@ -1,13 +1,18 @@
 #!/bin/bash
 
 function installStandalonePuppet(){
-	# Download puppet debian package 
-	wget https://apt.puppetlabs.com/puppetlabs-release-precise.deb
-	# Install debain package 
-	dpkg -i puppetlabs-release-precise.deb
-	apt-get update
-	# Install puppet 
-	apt-get install -y puppet
+	puppet help >/dev/null 2>&1
+	if [ $? == "0" ]; then
+		echo "Cool, puppet available ..."
+	else		
+		echo "Download puppet debian package ..."
+		wget https://apt.puppetlabs.com/puppetlabs-release-precise.deb
+		echo "Install debain package ..."
+		dpkg -i puppetlabs-release-precise.deb
+		apt-get update
+		echo "Installing puppet ..."
+		apt-get install -y puppet
+	fi
 }
 
 function installPuppetModules(){
@@ -22,7 +27,7 @@ function listPuppetModules(){
 
 function setHostName(){
 	# Check hostname entry
-	cat /etc/hostname |grep jenkins.example.com
+	cat /etc/hostname |grep jenkins.example.com >/dev/null 2>&1
 	
 	if [ $? == "0" ]; then
 		echo "Cool, HostName entry available ..."
@@ -34,7 +39,7 @@ function setHostName(){
 
 function modifyHostsFile(){
 	# Check hosts file entry
-	cat /etc/hosts |grep jenkins.example.com
+	cat /etc/hosts |grep jenkins.example.com >/dev/null 2>&1
 	
 	if [ $? == "0" ]; then
 		echo "Cool, Hosts file entry available ..."
