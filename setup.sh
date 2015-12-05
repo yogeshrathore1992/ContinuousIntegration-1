@@ -60,6 +60,25 @@ function installJenkins(){
 	puppet apply jenkins.pp --debug
 }
 
+function installForeman(){
+	foreman help >/dev/null 2>&1
+	
+	if [ $? == "0" ]; then
+		echo "Cool, Foreman available ..."
+	else
+		echo "Installing Foreman..."
+		sudo apt-get -y install ca-certificates
+		sudo wget https://apt.puppetlabs.com/puppetlabs-release-trusty.deb
+		sudo dpkg -i puppetlabs-release-trusty.deb
+		sudo echo "deb http://deb.theforeman.org/ trusty 1.8" > /etc/apt/sources.list.d/foreman.list
+		sudo echo "deb http://deb.theforeman.org/ plugins 1.8" >> /etc/apt/sources.list.d/foreman.list && wget -q http://deb.theforeman.org/pubkey.gpg -O- | apt-key add -
+		sudo apt-get update
+		sudo apt-get -y install foreman-installer
+		foreman-installer -v
+		sudo foreman-rake permissions:reset
+	fi
+}
+
 
 
 function main(){
@@ -68,6 +87,7 @@ function main(){
 	listPuppetModules
 	setHostName
 	installJenkins
+	installForeman
 }
 
 main
