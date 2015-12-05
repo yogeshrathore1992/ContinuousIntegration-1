@@ -79,7 +79,18 @@ function installForeman(){
 	fi
 }
 
+function configureHiera(){
+	ls /etc/puppet/hiera.yaml >/dev/null 2>&1
 
+	if [ $? == "0" ]; then
+		echo "Cool, Hiera Configured ..."
+	else
+		echo "Creating Hiera File..."
+		currentDirectory=`pwd`
+		# Change dir to /etc/puppet/hiera.yaml
+		cp ${currentDirectory}/files/hiera.yaml /etc/puppet/
+	fi
+}
 
 function main(){
 	installStandalonePuppet
@@ -88,6 +99,7 @@ function main(){
 	setHostName
 	installJenkins
 	installForeman
+	configureHiera
 }
 
 main
