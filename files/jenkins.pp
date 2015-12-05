@@ -11,8 +11,6 @@ jenkins::plugin {
 	'junit': ;
 	'mailer': ;
 	'javadoc': ;
-}
-jenkins::plugin {	
 	'maven-plugin': ;
 	'promoted-builds': ;
 	'scm-api': ;
@@ -27,8 +25,6 @@ jenkins::plugin {
 	'scriptler': ;
 	'uno-choice': ;
 	'ansicolor': ;
-}
-jenkins::plugin {	
 	'build-blocker-plugin': ;
 	'dashboard-view': ;
 	'ant': ;
@@ -41,8 +37,6 @@ jenkins::plugin {
 	'envfile': ;
 	'nant': ;
 	'ivy': ;
-}
-jenkins::plugin {	
 	'envinject': ;
 	'extended-choice-parameter': ;
 	'findbugs': ;
