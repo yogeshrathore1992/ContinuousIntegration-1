@@ -34,6 +34,7 @@ function setHostName(){
 	else
 		echo "Adding HostName into hosts file ..."
 		echo "jenkins.example.com" > /etc/hostname
+		hostname jenkins.example.com
 	fi
 }
 
@@ -70,6 +71,3 @@ function main(){
 }
 
 main
-
-
-
