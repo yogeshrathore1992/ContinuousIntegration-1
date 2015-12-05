@@ -1,14 +1,25 @@
 node 'jenkins.example.com' {
     include jenkins
 }
-jenkins::plugin { 'git-client': ;
-	'promoted-builds': ;
+jenkins::plugin { 
 	'credentials': ;
-	'scm-api': ;
-	'mailer': ;
-	'token-macro': ;
-	'matrix-project': ;
 	'ssh-credentials': ;
+	'git-client': ;
+	'git-server': ;
+	'rebuild': ;
+	'token-macro': ;
+	'junit': ;
+	'mailer': ;
+	'javadoc': ;
+	'maven-plugin': ;
+	'promoted-builds': ;
+	'scm-api': ;
+	'script-security': ;
+	'matrix-project': ;
+	'mapdb-api': ;
+	'subversion': ;
+	'run-condition': ;
+	'conditional-buildstep': ;
 	'parameterized-trigger': ;
 	'git': ;
 	'scriptler': ;
@@ -16,17 +27,16 @@ jenkins::plugin { 'git-client': ;
 	'ansicolor': ;
 	'build-blocker-plugin': ;
 	'dashboard-view': ;
+	'ant': ;
 	'analysis-core': ;
 	'checkstyle': ;
 	'chucknorris': ;
 	'clover': ;
-	'junit': ;
 	'config-file-provider': ;
-	'script-security': ;
 	'email-ext': ;
 	'envfile': ;
-	'ivy': ;
 	'nant': ;
+	'ivy': ;
 	'envinject': ;
 	'extended-choice-parameter': ;
 	'findbugs': ;
@@ -36,3 +46,4 @@ jenkins::plugin { 'git-client': ;
 	'tap': ;
 	'update-sites-manager': ;
 }
+
