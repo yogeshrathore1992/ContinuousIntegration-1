@@ -49,7 +49,7 @@
 			</configuration>
 			</plugin>
 
-			<!-- To generate nice looking java docs; just use mvn javadoc:test-javadoc 
+			<!-- To generate nice looking java docs; just use mvn javadoc:test-javadoc
 				and open target/site/testapidocs/index.html -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -61,9 +61,24 @@
 					<windowtitle>Employee Automation Test Suite</windowtitle>
 				</configuration>
 			</plugin>
+      <plugin>
+               <groupId>com.atlassian.maven.plugins</groupId>
+                 <artifactId>maven-jgitflow-plugin</artifactId>
+                 <version>1.0-alpha21.1</version>
+                 <configuration>
+                   <pushReleases>false</pushReleases>
+                   <keepBranch>false</keepBranch>
+                   <noTag>false</noTag>
+       <allowUntracked>true</allowUntracked>
+                   <flowInitContext>
+                     <masterBranchName>master</masterBranchName>
+                     <developBranchName>dev</developBranchName>
+                   </flowInitContext>
+                 </configuration>
+     </plugin>
 		</plugins>
 	</build>
-	
+
 	<dependencies>
 		<dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
