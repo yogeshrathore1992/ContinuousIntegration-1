@@ -10,17 +10,17 @@
   <name>EmployeeAutomation</name>
   <url>http://maven.apache.org</url>
      <scm>
-      <connection>scm:git:git@github.com:BigParser/Framework_BE.git</connection>
-      <developerConnection>scm:git:git@github.com:BigParser/Framework_BE.git</developerConnection>
+      <connection>scm:git:git@github.com:OpsTree/ContinuousIntegration.git</connection>
+      <developerConnection>scm:git:git@github.com:OpsTree/ContinuousIntegration.git</developerConnection>
    </scm>
    <distributionManagement>
       <repository>
          <id>nexusAuth</id>
-         <url>http://52.89.138.122/content/repositories/BigParser-Release</url>
+         <url>http://52.89.138.122/content/repositories/test</url>
       </repository>
       <snapshotRepository>
          <id>nexusAuth</id>
-         <url>http://52.89.138.122/content/repositories/BigParser-Snapshots</url>
+         <url>http://52.89.138.122/content/repositories/test</url>
       </snapshotRepository>
    </distributionManagement>
   
