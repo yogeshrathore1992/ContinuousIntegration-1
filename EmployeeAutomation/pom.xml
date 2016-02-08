@@ -9,7 +9,21 @@
 
   <name>EmployeeAutomation</name>
   <url>http://maven.apache.org</url>
-
+     <scm>
+      <connection>scm:git:git@github.com:BigParser/Framework_BE.git</connection>
+      <developerConnection>scm:git:git@github.com:BigParser/Framework_BE.git</developerConnection>
+   </scm>
+   <distributionManagement>
+      <repository>
+         <id>nexusAuth</id>
+         <url>http://52.89.138.122/content/repositories/BigParser-Release</url>
+      </repository>
+      <snapshotRepository>
+         <id>nexusAuth</id>
+         <url>http://52.89.138.122/content/repositories/BigParser-Snapshots</url>
+      </snapshotRepository>
+   </distributionManagement>
+  
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
@@ -34,6 +48,25 @@
 					<encoding>UTF-8</encoding>
 				</configuration>
 			</plugin>
+            <plugin>
+               <groupId>external.atlassian.jgitflow</groupId>
+               <artifactId>jgitflow-maven-plugin</artifactId>
+               <version>1.0-m4.3</version>
+               <configuration>
+                  <pushReleases>true</pushReleases>
+                  <keepBranch>false</keepBranch>
+                  <noTag>true</noTag>
+                  <autoVersionSubmodules>true</autoVersionSubmodules>
+                  <allowUntracked>true</allowUntracked>
+		  <pullDevelop>true</pullDevelop>
+                  <pullMaster>true</pullMaster> 
+                  <allowSnapshots>true</allowSnapshots>                 
+		  <flowInitContext>
+                     <masterBranchName>master-test</masterBranchName>
+                     <developBranchName>deploy-test</developBranchName>
+                  </flowInitContext>
+               </configuration>
+            </plugin>
 
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
