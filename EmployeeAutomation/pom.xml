@@ -13,6 +13,34 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
+	
+	<scm>
+
+      <connection>scm:git:git@github.com:OpsTree/ContinuousIntegration.git</connection>
+
+      <developerConnection>scm:git:git@github.com:OpsTree/ContinuousIntegration.git</developerConnection>
+
+   </scm>
+
+   <distributionManagement>
+
+      <repository>
+
+         <id>nexusAuth</id>
+
+         <url>http://192.168.0.7:8081/nexus/content/repositories/smit/</url>
+
+      </repository>
+
+      <snapshotRepository>
+
+         <id>nexusAuth</id>
+
+         <url>http://192.168.0.7:8081/nexus/content/repositories/smit/</url>
+
+      </snapshotRepository>
+
+   </distributionManagement>
 
 	<build>
 		<plugins>
@@ -61,6 +89,27 @@
 					<windowtitle>Employee Automation Test Suite</windowtitle>
 				</configuration>
 			</plugin>
+		
+		 <plugin>
+	       		 <groupId>com.atlassian.maven.plugins</groupId>
+       		 	<artifactId>maven-jgitflow-plugin</artifactId>
+        		<version>1.0-m4.3</version>
+        		<configuration>
+          			<pushReleases>true</pushReleases>
+          			<keepBranch>false</keepBranch>
+          			<autoVersionSubmodules>true</autoVersionSubmodules>
+          			<noTag>true</noTag>
+          			<allowUntracked>true</allowUntracked>
+          			<pullDevelop>true</pullDevelop>
+          			<pullMaster>true</pullMaster>
+          			<allowSnapshots>true</allowSnapshots>
+          			<flowInitContext>
+            			<masterBranchName>master-smit</masterBranchName>
+           			 <developBranchName>deploy-smit</developBranchName>
+         			 </flowInitContext>
+       				 </configuration> 
+     		</plugin>
+
 		</plugins>
 	</build>
 	
