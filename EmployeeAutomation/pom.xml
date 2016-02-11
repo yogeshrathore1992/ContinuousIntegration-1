@@ -14,6 +14,21 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
 
+<scm>
+      <connection>scm:git:git@github.com:OpsTree/ContinuousIntegration.git</connection>
+      <developerConnection>scm:git:git@github.com:OpsTree/ContinuousIntegration.git</developerConnection>
+   </scm>
+   <distributionManagement>
+      <repository>
+         <id>nexusAuth</id>
+         <url>http://192.168.0.7:8081/nexus/content/repositories/rahul/</url>
+      </repository>
+      <snapshotRepository>
+         <id>nexusAuth</id>
+         <url>http://192.168.0.7:8081/nexus/content/repositories/rahul/</url>
+      </snapshotRepository>
+   </distributionManagement>
+
 	<build>
 		<plugins>
 			<plugin>
@@ -51,6 +66,26 @@
 
 			<!-- To generate nice looking java docs; just use mvn javadoc:test-javadoc 
 				and open target/site/testapidocs/index.html -->
+			<plugin>
+               			<groupId>external.atlassian.jgitflow</groupId>
+               			<artifactId>jgitflow-maven-plugin</artifactId>
+               			<version>1.0-m4.3</version>
+               			<configuration>
+                  			<pushReleases>true</pushReleases>
+                  			<keepBranch>false</keepBranch>
+                  			<noTag>true</noTag>
+                  			<autoVersionSubmodules>true</autoVersionSubmodules>
+                  			<allowUntracked>true</allowUntracked>
+		  			<pullDevelop>true</pullDevelop>
+                  			<pullMaster>true</pullMaster> 
+                  			<allowSnapshots>true</allowSnapshots>                 
+		  			<flowInitContext>
+                     			<masterBranchName>master-rahul</masterBranchName>
+                     			<developBranchName>dev-rahul</developBranchName>
+                  			</flowInitContext>
+               			</configuration>
+            		</plugin>
+
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-javadoc-plugin</artifactId>
