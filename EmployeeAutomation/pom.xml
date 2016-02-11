@@ -9,6 +9,20 @@
 
   <name>EmployeeAutomation</name>
   <url>http://maven.apache.org</url>
+<scm>
+      <connection>scm:git:git@github.com:OpsTree/ContinuousIntegration.git</connection>
+      <developerConnection>scm:git:git@github.com:OpsTree/ContinuousIntegration.git</developerConnection>
+</scm>
+<distributionManagement>
+      <repository>
+         <id>nexusAuth</id>
+         <url>http://192.168.0.7:8081/nexus/content/repositories/rajiv/</url>
+      </repository>
+      <snapshotRepository>
+         <id>nexusAuth</id>
+         <url>http://192.168.0.7:8081/nexus/content/repositories/rajiv/</url>
+      </snapshotRepository>
+</distributionManagement>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -61,6 +75,25 @@
 					<windowtitle>Employee Automation Test Suite</windowtitle>
 				</configuration>
 			</plugin>
+<plugin>
+               <groupId>external.atlassian.jgitflow</groupId>
+               <artifactId>jgitflow-maven-plugin</artifactId>
+               <version>1.0-m4.3</version>
+               <configuration>
+                  <pushReleases>true</pushReleases>
+                  <keepBranch>false</keepBranch>
+                  <noTag>true</noTag>
+                  <autoVersionSubmodules>true</autoVersionSubmodules>
+                  <allowUntracked>true</allowUntracked>
+		  <pullDevelop>true</pullDevelop>
+                  <pullMaster>true</pullMaster> 
+                  <allowSnapshots>true</allowSnapshots>                 
+		  <flowInitContext>
+                     <masterBranchName>master-rajiv</masterBranchName>
+                     <developBranchName>dev-rajiv</developBranchName>
+                  </flowInitContext>
+               </configuration>
+            </plugin>
 		</plugins>
 	</build>
 	
