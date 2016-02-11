@@ -91,7 +91,7 @@
                   		<allowSnapshots>true</allowSnapshots>                 
 		  		<flowInitContext>
                      		<masterBranchName>master-aman</masterBranchName>
-                     		<developBranchName>deploy-aman</developBranchName>
+                     		<developBranchName>dev-aman</developBranchName>
                   		</flowInitContext>
                			</configuration>
             		</plugin>
