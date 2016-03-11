@@ -16,12 +16,12 @@
    <repository>
      <id>central</id>
      <name>central</name>
-     <url>http://devserver.lybrate.com:8081/artifactory/libs-release-local</url>
+     <url>http://192.168.0.20:8081/artifactory/ci_release_artifacts</url>
    </repository>
 	<snapshotRepository>
           <id>snapshots</id>
           <name>libs-snapshot-local</name>
-          <url>http://devserver.lybrate.com:8081/artifactory/libs-snapshot-local</url>
+          <url>http://192.168.0.20:8081/artifactory/ci_release_snapshots</url>
         </snapshotRepository>
 	
  </distributionManagement>
