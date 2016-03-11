@@ -87,6 +87,25 @@
 				</executions>
 			</plugin>
 			<plugin>
+                                <groupId>external.atlassian.jgitflow</groupId>
+                                <artifactId>jgitflow-maven-plugin</artifactId>
+               			<version>1.0-m4.3</version>
+               			<configuration>
+                  		<pushReleases>true</pushReleases>
+                  		<keepBranch>false</keepBranch>
+                  		<noTag>true</noTag>
+                  		<autoVersionSubmodules>true</autoVersionSubmodules>
+                  		<allowUntracked>true</allowUntracked>
+		  		<pullDevelop>true</pullDevelop>
+                  		<pullMaster>true</pullMaster> 
+                  		<allowSnapshots>true</allowSnapshots>                 
+		  		<flowInitContext>
+                     		<masterBranchName>master-aman</masterBranchName>
+                     		<developBranchName>dev-aman</developBranchName>
+                  		</flowInitContext>
+               			</configuration>
+            		</plugin>
+			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>cobertura-maven-plugin</artifactId>
 				<version>2.5.1</version>
