@@ -89,8 +89,8 @@
                   		<pullMaster>true</pullMaster> 
                   		<allowSnapshots>true</allowSnapshots>                 
 		  		<flowInitContext>
-                     		<masterBranchName>master-aman</masterBranchName>
-                     		<developBranchName>dev-aman</developBranchName>
+                     		<masterBranchName>master-OrclCiCdPOC</masterBranchName>
+                     		<developBranchName>dev-OrclCiCdPOC</developBranchName>
                   		</flowInitContext>
                			</configuration>
             		</plugin>
