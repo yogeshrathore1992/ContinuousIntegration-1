@@ -30,9 +30,6 @@ import cucumber.annotation.en.Given;
 import cucumber.annotation.en.Then;
 import cucumber.annotation.en.When;
 
-@RunWith(Cucumber.class)
-@Cucumber.Options(format = { "json:target/report.json" })
-
 public class Testcase_InvalidLogin extends Testbase {
     
     
