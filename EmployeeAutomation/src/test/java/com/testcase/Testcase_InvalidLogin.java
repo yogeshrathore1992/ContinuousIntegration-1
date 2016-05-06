@@ -17,8 +17,6 @@ import org.testng.annotations.Test;
 
 import com.automation.Testbase;
 
-package com.weblogism.cucumberjvm.javaexample;
-
 import static org.junit.Assert.assertTrue;
 
 import org.openqa.selenium.server.RemoteControlConfiguration;
