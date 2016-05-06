@@ -17,7 +17,23 @@ import org.testng.annotations.Test;
 
 import com.automation.Testbase;
 
+package com.weblogism.cucumberjvm.javaexample;
 
+import static org.junit.Assert.assertTrue;
+
+import org.openqa.selenium.server.RemoteControlConfiguration;
+import org.openqa.selenium.server.SeleniumServer;
+
+import com.thoughtworks.selenium.DefaultSelenium;
+
+import cucumber.annotation.After;
+import cucumber.annotation.Before;
+import cucumber.annotation.en.Given;
+import cucumber.annotation.en.Then;
+import cucumber.annotation.en.When;
+
+@RunWith(Cucumber.class)
+@Cucumber.Options(format = { "json:target/report.json" })
 
 public class Testcase_InvalidLogin extends Testbase {
     
