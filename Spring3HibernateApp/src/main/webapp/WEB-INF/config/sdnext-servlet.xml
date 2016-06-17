@@ -38,6 +38,7 @@ http://www.springframework.org/schema/tx/spring-tx-3.0.xsd">
 		<property name="annotatedClasses">
 			<list>
 				<value>com.sample.model.Employee</value>
+				<value>com.sample.model.Image</value>
 			</list>
 		</property>
 		<property name="hibernateProperties">
