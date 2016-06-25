@@ -396,7 +396,7 @@
 			<version>3.0.0.GA</version>
 		</dependency>
 
-		<!-- Spring Dependancies-->
+		<!-- Spring Dependancy -->
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-webmvc</artifactId>
