@@ -9,7 +9,7 @@ public class EmployeeBeanTest {
 	@Test
 	public void testGetterSetter() {
 		EmployeeBean employeeBean = new EmployeeBean();
-		employeeBean.setName("name");
+		employeeBean.setName("nme");
 		assertEquals("Setter not returning right name", "name", employeeBean.getName());
 	}
 
