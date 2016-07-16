@@ -2,7 +2,7 @@
 machine:
 
   timezone:
-    UTC # Set the timezone
+    Asia/Kolkata # Set the timezone
 
   # Override /etc/hosts
   hosts:
